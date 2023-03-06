@@ -442,10 +442,22 @@ body {
       justify-content: space-around;
 }
 
-.marquee-infinite img {
-  width: 12.5%;
+.marquee-infinite__item {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 12.5%;
+          flex: 0 1 12.5%;
   max-height: 140px;
-  height: auto;
+}
+
+.marquee-infinite picture {
+  max-width: 100%;
+}
+
+.marquee-infinite img {
+  max-width: 100%;
   -webkit-filter: grayscale(1) brightness(50%);
           filter: grayscale(1) brightness(50%);
 }
