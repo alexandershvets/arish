@@ -419,6 +419,15 @@ body {
   padding: 0.3125rem 0;
   max-width: 100%;
   overflow: hidden;
+  background: rgba(14, 16, 26, 0.9);
+}
+
+@supports ((-webkit-backdrop-filter: blur(31px)) or (backdrop-filter: blur(31px))) {
+  .marquee-infinite {
+    background: rgba(14, 16, 26, 0.75);
+    -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+  }
 }
 
 .marquee-infinite div {
@@ -449,7 +458,7 @@ body {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 12.5%;
           flex: 0 1 12.5%;
-  max-height: 140px;
+  max-height: 120px;
 }
 
 .marquee-infinite picture {
@@ -988,6 +997,7 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    padding-bottom: 3.125rem;
   }
 
   .footer__widjet {
@@ -1219,6 +1229,10 @@ body {
 @media (max-width: 47.99875em) {
   .marquee-infinite div {
     width: 400%;
+  }
+
+  .marquee-infinite__item {
+    max-height: 80px;
   }
 }
 
