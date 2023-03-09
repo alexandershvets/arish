@@ -1908,9 +1908,14 @@ body {
   cursor: pointer;
 }
 
-.thumbs-item-peculiarities__slide.swiper-slide-thumb-active .thumbs-item-peculiarities__image {
-  -webkit-filter: brightness(116%) drop-shadow(0px 0px 10px #7900ea);
-          filter: brightness(116%) drop-shadow(0px 0px 10px #7900ea);
+.item-peculiarities_left .thumbs-item-peculiarities__slide.swiper-slide-thumb-active .thumbs-item-peculiarities__image {
+  -webkit-filter: brightness(116%) drop-shadow(0px 0px 10px #277aa5);
+          filter: brightness(116%) drop-shadow(0px 0px 10px #277aa5);
+}
+
+.item-peculiarities_right .thumbs-item-peculiarities__slide.swiper-slide-thumb-active .thumbs-item-peculiarities__image {
+  -webkit-filter: brightness(116%) drop-shadow(0px 0px 10px #c9044e);
+          filter: brightness(116%) drop-shadow(0px 0px 10px #c9044e);
 }
 
 .thumbs-item-peculiarities__image {
@@ -4285,14 +4290,9 @@ body {
             transform: scale(1.02);
   }
 
-  .item-peculiarities_left .thumbs-item-peculiarities__image:hover {
-    -webkit-filter: brightness(116%) drop-shadow(0px 0px 10px #277aa5);
-            filter: brightness(116%) drop-shadow(0px 0px 10px #277aa5);
-  }
-
-  .item-peculiarities_right .thumbs-item-peculiarities__image:hover {
-    -webkit-filter: brightness(116%) drop-shadow(0px 0px 10px #c9044e);
-            filter: brightness(116%) drop-shadow(0px 0px 10px #c9044e);
+  .thumbs-item-peculiarities__image:hover {
+    -webkit-filter: brightness(116%) drop-shadow(0px 0px 10px #7900ea);
+            filter: brightness(116%) drop-shadow(0px 0px 10px #7900ea);
   }
 
   .thumbs-item-peculiarities__arrow.swiper-button-disabled:hover {
