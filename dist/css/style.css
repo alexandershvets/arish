@@ -1796,6 +1796,7 @@ body {
 }
 
 .thumbs-item-peculiarities__text {
+  max-width: 8.9375rem;
   font-size: 0.75rem;
   line-height: 1.3333333333;
   color: #a7a7a7;
