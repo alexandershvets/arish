@@ -3777,7 +3777,7 @@
                     320: {
                         slidesPerView: 2
                     },
-                    479.98: {
+                    466: {
                         slidesPerView: 3
                     },
                     767.98: {
