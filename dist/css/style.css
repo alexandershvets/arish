@@ -909,8 +909,7 @@ body {
   width: 100%;
   min-height: 4.0625rem;
   font-weight: 700;
-  font-size: 0.9375rem;
-  line-height: 1.3333333333;
+  line-height: 1.5333333333;
   color: #fff;
   text-transform: uppercase;
   text-align: left;
@@ -967,6 +966,18 @@ body {
 @supports not (padding-right: clamp( 3.75rem , 3.1826241135rem  +  2.8368794326vw , 6.25rem )) {
   .spollers__title {
     padding-right: calc(3.75rem + 2.5 * (100vw - 20rem) / 88.125);
+  }
+}
+
+@supports (font-size: clamp( 0.875rem , 0.8608156028rem  +  0.0709219858vw , 0.9375rem )) {
+  .spollers__title {
+    font-size: clamp( 0.875rem , 0.8608156028rem  +  0.0709219858vw , 0.9375rem );
+  }
+}
+
+@supports not (font-size: clamp( 0.875rem , 0.8608156028rem  +  0.0709219858vw , 0.9375rem )) {
+  .spollers__title {
+    font-size: calc(0.875rem + 0.0625 * (100vw - 20rem) / 88.125);
   }
 }
 
@@ -4221,7 +4232,7 @@ body {
 
   .spollers__title {
     min-height: 3.75rem;
-    padding: 0.625rem 2.5rem 0.625rem 1.25rem;
+    padding: 0.625rem 2.5rem 0.625rem 1.125rem;
   }
 
   .spollers__title::after {
