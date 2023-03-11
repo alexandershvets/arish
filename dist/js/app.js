@@ -1,6 +1,6 @@
 (() => {
     "use strict";
-    const modules_flsModules = {};
+    const flsModules = {};
     function isWebp() {
         function testWebP(callback) {
             let webP = new Image;
@@ -230,7 +230,7 @@
             }
         }));
     }
-    function functions_FLS(message) {
+    function FLS(message) {
         setTimeout((() => {
             if (window.FLS) console.log(message);
         }), 0);
@@ -329,10 +329,10 @@
             }));
         }
         setLogging(message) {
-            this.config.logging ? functions_FLS(`[PRLX Mouse]: ${message}`) : null;
+            this.config.logging ? FLS(`[PRLX Mouse]: ${message}`) : null;
         }
     }
-    modules_flsModules.mousePrlx = new MousePRLX({});
+    flsModules.mousePrlx = new MousePRLX({});
     function isObject(obj) {
         return null !== obj && "object" === typeof obj && "constructor" in obj && obj.constructor === Object;
     }
@@ -3916,15 +3916,6 @@
     window.addEventListener("load", (function(e) {
         initSliders();
     }));
-    let addWindowScrollEvent = false;
-    setTimeout((() => {
-        if (addWindowScrollEvent) {
-            let windowScroll = new Event("windowScroll");
-            window.addEventListener("scroll", (function(e) {
-                document.dispatchEvent(windowScroll);
-            }));
-        }
-    }), 0);
     document.addEventListener("click", (function(e) {
         const targetElement = e.target;
         if (!targetElement.closest(".langs")) document.querySelector(".langs").classList.remove("active");
@@ -3940,7 +3931,7 @@
             image.removeAttribute("data-prlx-mouse");
         }));
     }));
-    window["FLS"] = true;
+    window["FLS"] = false;
     isWebp();
     addTouchClass();
     menuInit();
