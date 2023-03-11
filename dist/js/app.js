@@ -3912,8 +3912,6 @@
     document.querySelector(".langs__arrow").addEventListener("click", (function(e) {
         e.target.closest(".langs").classList.toggle("active");
     }));
-    const textBlocks = document.querySelectorAll("[data-cuttext]");
-    textBlocks.forEach((textBlock => {}));
     window["FLS"] = true;
     isWebp();
     menuInit();
