@@ -14,6 +14,29 @@
             document.documentElement.classList.add(className);
         }));
     }
+    let isMobile = {
+        Android: function() {
+            return navigator.userAgent.match(/Android/i);
+        },
+        BlackBerry: function() {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Opera: function() {
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function() {
+            return navigator.userAgent.match(/IEMobile/i);
+        },
+        any: function() {
+            return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
+        }
+    };
+    function addTouchClass() {
+        if (isMobile.any()) document.documentElement.classList.add("touch");
+    }
     let _slideUp = (target, duration = 500, showmore = 0) => {
         if (!target.classList.contains("_slide")) {
             target.classList.add("_slide");
@@ -3912,8 +3935,14 @@
     document.querySelector(".langs__arrow").addEventListener("click", (function(e) {
         e.target.closest(".langs").classList.toggle("active");
     }));
+    document.addEventListener("DOMContentLoaded", (function() {
+        if (document.documentElement.classList.contains("touch")) document.querySelectorAll("[data-prlx-mouse]").forEach((image => {
+            image.removeAttribute("data-prlx-mouse");
+        }));
+    }));
     window["FLS"] = true;
     isWebp();
+    addTouchClass();
     menuInit();
     spollers();
 })();
