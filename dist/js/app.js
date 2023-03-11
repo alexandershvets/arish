@@ -3870,6 +3870,7 @@
                 spaceBetween: 16,
                 speed: 800,
                 watchOverflow: true,
+                loop: true,
                 thumbs: {
                     swiper: thumbsSwiper
                 },
