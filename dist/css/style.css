@@ -1928,10 +1928,17 @@ body {
 }
 
 .main-slider__image-ibg img:nth-child(1) {
-  top: -10% !important;
-  left: -10% !important;
-  width: 120% !important;
-  height: 120% !important;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+}
+
+.main-slider__image-ibg picture:nth-child(1) img {
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
 }
 
 .main-slider__pagination {
