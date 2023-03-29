@@ -3871,13 +3871,6 @@ body::after {
   }
 }
 
-@media (max-width: 35em) {
-  .main-slider__image-ibg img {
-    -o-object-position: 71% top !important;
-       object-position: 71% top !important;
-  }
-}
-
 @media (max-width: 20em) {
   .main-slider__info {
     text-align: center;
@@ -4764,6 +4757,11 @@ body::after {
   .main-slider__button span {
     min-width: 220px;
     min-height: 50px;
+  }
+
+  .main-slider__image-ibg img {
+    -o-object-position: 71% top !important;
+       object-position: 71% top !important;
   }
 
   .item-last-news__info {
