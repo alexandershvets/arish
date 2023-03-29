@@ -3873,8 +3873,8 @@ body::after {
 
 @media (max-width: 35em) {
   .main-slider__image-ibg img {
-    -o-object-position: 71% top;
-       object-position: 71% top;
+    -o-object-position: 71% top !important;
+       object-position: 71% top !important;
   }
 }
 
@@ -4405,8 +4405,8 @@ body::after {
   }
 
   .main-slider__image-ibg img {
-    -o-object-position: 58% top;
-       object-position: 58% top;
+    -o-object-position: 58% top !important;
+       object-position: 58% top !important;
   }
 
   .peculiarities {
