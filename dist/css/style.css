@@ -1923,16 +1923,19 @@ body::after {
   pointer-events: none;
 }
 
+.main-slider__slide.touch-slide.swiper-slide-active a picture:nth-child(1) img,
 .main-slider__slide.touch-slide.swiper-slide-active a img:nth-child(1) {
   -webkit-animation: move-1 20s ease infinite alternate;
           animation: move-1 20s ease infinite alternate;
 }
 
+.main-slider__slide.touch-slide.swiper-slide-active a picture:nth-child(2) img,
 .main-slider__slide.touch-slide.swiper-slide-active a img:nth-child(2) {
   -webkit-animation: move-2 20s ease infinite alternate;
           animation: move-2 20s ease infinite alternate;
 }
 
+.main-slider__slide.touch-slide.swiper-slide-active a picture:nth-child(3) img,
 .main-slider__slide.touch-slide.swiper-slide-active a img:nth-child(3) {
   -webkit-animation: move-3 20s ease infinite alternate;
           animation: move-3 20s ease infinite alternate;
