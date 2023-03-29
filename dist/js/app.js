@@ -37,6 +37,13 @@
     function addTouchClass() {
         if (isMobile.any()) document.documentElement.classList.add("touch");
     }
+    function addLoadedClass() {
+        window.addEventListener("load", (function() {
+            setTimeout((function() {
+                document.documentElement.classList.add("loaded");
+            }), 0);
+        }));
+    }
     let _slideUp = (target, duration = 500, showmore = 0) => {
         if (!target.classList.contains("_slide")) {
             target.classList.add("_slide");
@@ -3824,6 +3831,7 @@
                 speed: 800,
                 watchOverflow: true,
                 loop: true,
+                autoHeight: true,
                 thumbs: {
                     swiper: thumbsSwiper
                 },
@@ -3871,6 +3879,7 @@
                 speed: 800,
                 watchOverflow: true,
                 loop: true,
+                autoHeight: true,
                 thumbs: {
                     swiper: thumbsSwiper
                 },
@@ -3928,13 +3937,19 @@
         e.target.closest(".langs").classList.toggle("active");
     }));
     document.addEventListener("DOMContentLoaded", (function() {
-        if (document.documentElement.classList.contains("touch")) document.querySelectorAll("[data-prlx-mouse]").forEach((image => {
-            image.removeAttribute("data-prlx-mouse");
-        }));
+        if (document.documentElement.classList.contains("touch")) {
+            document.querySelectorAll("[data-prlx-mouse]").forEach((image => {
+                image.removeAttribute("data-prlx-mouse");
+            }));
+            document.querySelectorAll(".main-slider__slide").forEach((slide => {
+                slide.classList.add("touch-slide");
+            }));
+        }
     }));
     window["FLS"] = false;
     isWebp();
     addTouchClass();
+    addLoadedClass();
     menuInit();
     spollers();
 })();
