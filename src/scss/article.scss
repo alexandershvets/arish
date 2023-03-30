@@ -1,0 +1,86 @@
+.article-page {
+  @include adaptiveValue('padding-top', 80, 45);
+  @include adaptiveValue('padding-bottom', 90, 40);
+  // .article-page__container
+  &__container {
+  }
+  // .article-page__header-section
+  &__header-section {
+    @include adaptiveValue('margin-bottom', 80, 45);
+  }
+  // .article-page__news
+  &__news {
+  }
+}
+
+.article-news {
+  @include adaptiveValue('padding-bottom', 150, 80);
+  // .article-news__image-ibg
+  &__image-ibg {
+    padding-bottom: 28%;
+    min-height: rem(300);
+    background-color: $ebonyColor;
+    overflow: hidden;
+    &:not(:last-child) {
+      // @include adaptiveValue('margin-bottom', 80, 20);
+      @include adaptiveValue('margin-bottom', 60, 20);
+    }
+    img {
+      @media (max-width: $mobile) {
+        object-position: 15% top;
+      }
+    }
+    @media (max-width: $mobile) {
+      min-height: rem(200);
+    }
+  }
+  // .article-news__info
+  &__info {
+  }
+  // .article-news__header
+  &__header {
+  }
+  // .article-news__title
+  &__title {
+    font-weight: 700;
+    font-size: rem(58);
+    @include adaptiveValue('font-size', 58, 30);
+    // line-height: math.div(70, 58);
+    // line-height: 1.6;
+    &:not(:last-child) {
+      // @include adaptiveValue('margin-bottom', 25, 20);
+      // @include adaptiveValue('margin-bottom', 25, 20);
+
+      margin-bottom: 12px;
+      // @include adaptiveValue('margin-bottom', 12, 10);
+    }
+  }
+  // .article-news__line
+  &__line {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    @include adaptiveValue('font-size', 25, 18);
+    line-height: 1.4;
+    text-transform: uppercase;
+    @include adaptiveValue('margin-bottom', 45, 20);
+  }
+  // .article-news__date
+  &__date {
+    color: rgba(255, 255, 255, 0.2);
+  }
+  // .article-news__text
+  &__text {
+    @include adaptiveValue('font-size', 20, 16);
+    line-height: math.div(30, 20);
+    color: #b9b9b9;
+    p {
+      &:not(:last-child) {
+        margin-bottom: em(38, 30);
+        @media (max-width: $mobileSmall) {
+          margin-bottom: em(26, 30);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,100 @@
+//<BUTTONS (a.btn+tab)>
+// Снипет (HTML): btn
+
+// Button
+.button {
+  position: relative;
+  display: inline-block;
+  transition: filter 0.3s ease 0s;
+  span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: em(58, 14);
+    min-width: em(260, 14);
+    padding: 0 em(25, 14);
+    font-weight: 700;
+    font-size: rem(14);
+    line-height: math.div(24, 14);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: $greyColor;
+    background: -webkit-linear-gradient(89deg, $greyColor 0%, $greyColor 100%);
+    background: linear-gradient(89deg, $greyColor 0%, $greyColor 100%);
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      filter: brightness(116%) drop-shadow(0px 0px 10px darken($greyColor, 10%));
+    }
+  }
+
+  // .button_purple
+  &_purple {
+    span {
+      background: $purpleColor;
+      background: -webkit-linear-gradient(89deg, $purpleColor 0%, #62328f 100%);
+      background: linear-gradient(89deg, $purpleColor 0%, #62328f 100%);
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        filter: brightness(116%) drop-shadow(0px 0px 10px darken(#921eff, 10%));
+      }
+    }
+  }
+  // .button_blue
+  &_blue {
+    span {
+      background: $blueColor;
+      background: -webkit-linear-gradient(89deg, $blueColor 0%, #3addc3 100%);
+      background: linear-gradient(89deg, $blueColor 0%, #3addc3 100%);
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        filter: brightness(116%) drop-shadow(0px 0px 10px darken($blueColor, 10%));
+      }
+    }
+  }
+  // .button_pink
+  &_pink {
+    span {
+      background: $pinkColor;
+      background: -webkit-linear-gradient(89deg, $pinkColor 0%, #762b88 100%);
+      background: linear-gradient(89deg, $pinkColor 0%, #762b88 100%);
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        filter: brightness(116%) drop-shadow(0px 0px 10px darken($pinkColor, 10%));
+      }
+    }
+  }
+  // .button_orange
+  &_orange {
+    span {
+      background: #995504;
+      background: -webkit-linear-gradient(89deg, #995504 0%, $orangeColor 100%);
+      background: linear-gradient(89deg, #995504 0%, $orangeColor 100%);
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        filter: brightness(116%) drop-shadow(0px 0px 10px darken($orangeColor, 10%));
+      }
+    }
+  }
+
+  // .button_pink-hover
+  &_pink-hover {
+    @media (any-hover: hover) {
+      &:hover {
+        span {
+          background: $pinkColor;
+          background: -webkit-linear-gradient(89deg, $pinkColor 0%, #762b88 100%);
+          background: linear-gradient(89deg, $pinkColor 0%, #762b88 100%);
+          transition: all 4s ease 0s;
+        }
+        filter: brightness(116%) drop-shadow(0px 0px 10px darken($pinkColor, 10%));
+      }
+    }
+  }
+}

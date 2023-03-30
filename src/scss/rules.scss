@@ -1,0 +1,13 @@
+.rules-page {
+  @include adaptiveValue('padding-top', 115, 50);
+  @include adaptiveValue('padding-bottom', 100, 80);
+  // .rules-page__container
+  &__container {
+  }
+  // .rules-page__header-section
+  &__header-section {
+  }
+  // .rules-page__body
+  &__body {
+  }
+}

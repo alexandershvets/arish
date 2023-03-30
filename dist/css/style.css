@@ -2375,7 +2375,6 @@ body::after {
 }
 
 .thumbs-item-peculiarities__slider {
-  padding-top: 1.25rem;
   margin: 0 auto;
 }
 
@@ -2401,6 +2400,10 @@ body::after {
   .thumbs-item-peculiarities__slider {
     margin-right: calc(1.25rem + 1.5625 * (100vw - 20rem) / 88.125);
   }
+}
+
+.thumbs-item-peculiarities__wrapper {
+  padding-top: 1.25rem;
 }
 
 .thumbs-item-peculiarities__slide {
@@ -2441,7 +2444,6 @@ body::after {
   width: 8.5625rem;
   height: 7.375rem;
   margin-bottom: 0.9375rem;
-  overflow: hidden;
   -webkit-transition: -webkit-filter 0.3s ease 0s;
   transition: -webkit-filter 0.3s ease 0s;
   -o-transition: filter 0.3s ease 0s;

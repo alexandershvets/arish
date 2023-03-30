@@ -1,0 +1,252 @@
+@use 'sass:math';
+
+// МИКСИНЫ
+@import 'base/mixins';
+
+// ШРИФТЫ
+// &display=swap - добавить при подключении через плагин
+@import url('https://fonts.googleapis.com/css?family=Montserrat:regular,500,700,800,900&display=swap');
+
+// Подключить если есть локальные файлы шрифтов
+// @import "fonts/fonts";
+
+// Подключение иконочных шрифтов
+// Подключить если есть файл иконочного шрифта
+// @import "fonts/icons";
+
+// ШРИФТ ПО УМОЛЧАНИЮ
+$fontFamily: 'Montserrat';
+$fontWaight: 400;
+$fontSize: rem(16); // где 16(px) - размер шрифта по умолчанию из макета
+
+// ОСНОВНЫЕ ЦВЕТА
+$mainColor: #fff; // Цвет шрифта по умолчанию
+$mainDarkColor: #0e101a;
+
+$purpleColor: #921eff;
+$blueColor: #3199ce;
+$pinkColor: #fa0662;
+$orangeColor: #c28916;
+$greyColor: #595959;
+
+$ebonyColor: #242636; // 2f2c3b
+// #2e2e2e
+
+// НАСТРОЙКИ
+$minWidth: 320; // Минимальная ширина страницы
+$maxWidth: 1920; // Ширина полотна (макета)
+$maxWidthContainer: 1650; // Ширина ограничивающего контейнера (0 = нет ограничения)
+$containerPadding: 80; // Общий отступ у контейнера (30 = по 15px слева и справа, 0 = нет отступа)
+
+$containerWidth: $maxWidthContainer + $containerPadding; // Ширина срабатывания первого брейкпоинта
+
+// БРЕЙК-ПОИНТЫ
+$pc: em($containerWidth); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
+$mobile: em(767.98); // Телефоны L
+$mobileSmall: em(479.98); // Телефоны S
+
+// ТИП АДАПТИВА:
+// 1 = отзывчивость (у контейнера нет брейкпоинтов),
+// 2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
+$responsiveType: 1;
+
+//===================================================================
+// ОБНУЛЕНИЕ И ОБЩИЕ ПАРАМЕТРЫ
+@import 'base/null';
+
+body {
+  background-color: $mainDarkColor;
+  font-weight: $fontWaight;
+  // Скролл заблокирован
+  .lock & {
+    overflow: hidden;
+    touch-action: none;
+  }
+
+  &::after {
+    content: '';
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background-color: $mainDarkColor;
+    transition: opacity 1s ease 0s;
+    pointer-events: none;
+  }
+
+  // Сайт загружен
+  .loaded & {
+    // opacity: 1;
+    &::after,
+    .spinner {
+      opacity: 0;
+      overflow: hidden;
+    }
+  }
+}
+
+//===================================================================
+// ОБОЛОЧКА
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  &.home {
+    background-color: $mainDarkColor;
+    background-image: url('@img/home/smoke-top.png'), url('@img/footer/footer-bg.png');
+    background-position: top, bottom;
+    background-size: contain, cover;
+    background-repeat: no-repeat, no-repeat;
+    @media (min-width: em(3300)) {
+      background-size: cover, cover;
+    }
+    @media (max-width: $mobile) {
+      // background-image: none, url('@img/footer/footer-bg.png');
+      background-size: cover, cover;
+      background-position: center -1420px, bottom;
+    }
+  }
+  &.inner {
+    background-color: $mainDarkColor;
+    background-image: url('@img/inner-page/smoke-top.png'), url('@img/inner-page/smoke-bottom.png'),
+      url('@img/footer/footer-bg.png');
+    background-position: center top, center bottom, bottom;
+    background-size: contain, cover, cover;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    @media (max-width: $mobile) {
+      background-image: none, none, url('@img/footer/footer-bg.png');
+    }
+  }
+
+  // Прижимаем footer
+  > main {
+    flex: 1 1 auto;
+  }
+  // Фикс для слайдеров
+  > * {
+    min-width: 0;
+  }
+}
+
+//===================================================================
+// ОГРАНИЧИВАЮЩИЙ КОНТЕЙНЕР
+/*
+(i) Стили будут применяться ко
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+@if ($responsiveType==1) {
+  // Отзывчивая
+  [class*='__container'] {
+    @if ($maxWidthContainer>0) {
+      max-width: rem($maxWidthContainer);
+      box-sizing: content-box;
+      margin: 0 auto;
+    }
+    @if ($containerPadding>0) {
+      padding: 0 rem(math.div($containerPadding, 2));
+    }
+    @media (max-width: $mobile) {
+      padding: 0 15px;
+    }
+  }
+} @else {
+  // По брейк-поинтам
+  [class*='__container'] {
+    margin: 0 auto;
+    @if ($maxWidthContainer>0) {
+      max-width: rem($maxWidthContainer);
+      box-sizing: content-box;
+    } @else {
+      @if ($containerPadding>0) {
+        padding: 0 rem(math.div($containerPadding, 2));
+      }
+    }
+    @media (max-width: $pc) {
+      max-width: rem(970);
+    }
+    @media (max-width: $tablet) {
+      max-width: rem(750);
+    }
+    @media (max-width: $mobile) {
+      max-width: none;
+      @if ($containerPadding>0 and $maxWidthContainer>0) {
+        padding: 0 rem(math.div($containerPadding, 2));
+      }
+    }
+  }
+}
+
+//===================================================================
+// Подключение базовых стилей, шаблонов (заготовок) и вспомогательных классов
+// Для подключения/отключения конкретных стилей смотри base.scss
+@import 'base';
+
+// Подключение стилей общих элементов проекта
+@import 'common';
+
+// Подключение стилей отдельных блоков
+@import 'header';
+@import 'footer';
+
+// Подключение стилей отдельных страниц
+@import 'home';
+@import 'article';
+@import 'faq';
+@import 'friends';
+@import 'news';
+@import 'policy';
+@import 'rules';
+@import 'start';
+
+.page {
+  padding-top: rem(110);
+  @media (max-width: em(1290)) {
+    padding-top: rem(95);
+  }
+  @media (max-width: em(620)) {
+    padding-top: rem(80);
+  }
+  // .page__main-slider
+  &__main-slider {
+  }
+  // .page__peculiarities
+  &__peculiarities {
+  }
+  // .page__last-news
+  &__last-news {
+  }
+  // .page__freands
+  &__freands {
+  }
+  // .page__faq
+  &__faq {
+  }
+  // .page__play-start
+  &__play-start {
+  }
+  // .page__friends
+  &__friends {
+  }
+  // .page__policy
+  &__policy {
+  }
+  // .page__rules
+  &__rules {
+  }
+  // .page__news
+  &__news {
+  }
+  // .page__article
+  &__article {
+  }
+  // .page__peculiarities
+  &__peculiarities {
+  }
+}

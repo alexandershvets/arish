@@ -1,0 +1,16 @@
+.policy-page {
+  @include adaptiveValue('padding-top', 115, 50);
+  @include adaptiveValue('padding-bottom', 100, 80);
+  // .policy-page__container
+  &__container {
+  }
+  // .policy-page__header-section
+  &__header-section {
+    .title {
+      word-wrap: break-word;
+    }
+  }
+  // .policy-page__body
+  &__body {
+  }
+}

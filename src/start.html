@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('html/_head.htm',{
+  "title": "Начать Играть"
+})
+
+<body>
+  <div class="wrapper inner">
+    @@include('html/_header.htm',{})
+
+    <main class="page">
+
+      <section class="page__play-start play-start section">
+        <div class="play-start__container">
+
+          <div class="play-start__header-section section-header">
+            <h2 class="section-header__title title">Начать играть</h2>
+            <div class="section-header__subtitle subtitle">
+              Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать
+            </div>
+          </div>
+
+          <div class="play-start__body">
+
+            <div class="play-start__column">
+              <div class="play-start__item item-play-start item-play-start_blue">
+                <h3 class="item-play-start__title text-gradient-blue">Регистрация</h3>
+                <div class="item-play-start__text">
+                  Для того чтобы войти в игру вам необходимо создать мастер аккаунт, войти в кабинет и создать необходимое количество игровых аккаунтов.
+                </div>
+                <div class="item-play-start__bottom">
+                  <a href="" class="item-play-start__button button button_orange"><span class="cut-corners">Подробнее</span></a>
+                  <a href="" class="item-play-start__login">Войти в кабинет</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="play-start__column">
+              <div class="play-start__item item-play-start item-play-start_pink">
+                <h3 class="item-play-start__title text-gradient-pink">Скачать игру</h3>
+                <div class="item-play-start__text">
+                  Загрузите лаунчер, положите его в пустую папку и запустите. Он автоматически скачает все необходимые файлы для игры.
+                </div>
+                <div class="item-play-start__bottom">
+                  <a href="" class="item-play-start__button button button_pink"><span class="cut-corners">Скачать лаунчер</span></a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    @@include('html/_footer.htm',{})
+  </div>
+
+  <div class="spinner"></div>
+
+  @@include('html/_popup.htm',{})
+  @@include('html/_js.htm',{})
+</body>
+</html>

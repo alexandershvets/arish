@@ -1,0 +1,16 @@
+.faq {
+  @include adaptiveValue('padding-top', 115, 60);
+  @include adaptiveValue('padding-bottom', 80, 60);
+  // .faq__container
+  &__container {
+  }
+  // .faq__header-section
+  &__header-section {
+  }
+  // .faq__spollers
+  &__spollers {
+    @media (max-width: em(390)) {
+      margin: 0 rem(-10);
+    }
+  }
+}
