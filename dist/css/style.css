@@ -4299,8 +4299,8 @@ body::after {
 
 @media (max-width: 47.99875em) {
   .wrapper.home {
-    background-size: cover, cover;
-    background-position: center -1420px, bottom;
+    background-size: 500%, cover;
+    background-position: center -657px, bottom;
   }
 
   .no-webp .wrapper.inner{
@@ -4607,8 +4607,14 @@ body::after {
 }
 
 @media (max-width: 29.99875em) {
+  .wrapper.home {
+    background-size: 700%, cover;
+    background-position: center -412px, bottom;
+  }
+
   .no-webp .pagging__arrow{
     background: url("../img/icons/arrow.png") center/contain no-repeat !important; }
+
   .pagging__arrow {
     width: 1.25rem;
     height: 1.25rem;

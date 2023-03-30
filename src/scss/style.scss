@@ -107,8 +107,14 @@ body {
     }
     @media (max-width: $mobile) {
       // background-image: none, url('@img/footer/footer-bg.png');
-      background-size: cover, cover;
-      background-position: center -1420px, bottom;
+      // background-size: cover, cover;
+      // background-position: center -1420px, bottom;
+      background-size: 500%, cover;
+      background-position: center -657px, bottom;
+    }
+    @media (max-width: $mobileSmall) {
+      background-size: 700%, cover;
+      background-position: center -412px, bottom;
     }
   }
   &.inner {
